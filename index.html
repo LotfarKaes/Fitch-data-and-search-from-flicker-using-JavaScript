@@ -1,0 +1,103 @@
+<!--Lotfar kaes-->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Flickr</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" type="image/png" href="my/images/flickr.png">
+    </head>
+    <body>
+     <br><br>
+
+        <div style="text-align: center"> 
+          <h2 class="fheader" id="H1">My Flickr Based Image Gallery App</h2>
+        </div>
+        <br>
+        <div class="container">
+            <div class="loader" id="loading">
+                <div class="loader-label">
+                    <i class="fa fa-refresh fa-spin"></i>                 
+                </div>
+            </div>
+				<div id="gradient"></div>
+
+            <div class="row col-sm-12">
+                <div class="flick-search">
+                    <form id="search-form" class="row">
+
+                        <div class="col-md-8 col-md-offset-2">
+                            <div id="search-error" class="alert alert-danger flickr-error" role="alert">.</div>
+                            <div class="input-group">
+                                <input id="search-input" type="text" placeholder="search picture from flicker" required title="type something here..!" >
+                                <span class="input-group-btn">
+                                    <button id="js-search-btn" class="btn btn-info">
+									 <span class="glyphicon glyphicon-search"></span>Search
+									</button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row col-sm-12">
+                  
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="emptymsg" id="emptymsg">
+                                <div class="alert alert-danger">
+                                    <strong>Your search did not match any pictures</strong>
+                                </div>
+                            </div></div></div>
+
+                    <div id="js-flickr-head-space"></div>
+                    <div id="gallery" class="flick-gallery">
+                        <div class="flick-gallery-head">
+                            <div class="gallerymsg" id="gallerymsg"><h2>Make your own photo gallery</h2></div>
+                            <div id="show-sel-gallery-stat" class="flickr-tip">
+                                <b id="show-sle-gallery-count">{count}</b> selected
+                                <button id="show-selected" class="btn btn-info">
+								<span class="glyphicon glyphicon-forward"></span>Show gallery
+								</button>
+								
+                            </div>
+                        </div>
+
+                        <div id="gallery-list"></div>
+                        <div id="flickr-more-container" class="flickr-more-photos a-c">
+                            
+                        </div>
+                    </div>
+
+                    <div id="gallery-selected" class="flick-gallery">
+                        <h2 class="myGallery" id="js-chosen-title">My Gallery:</h2>
+                        <div class="flickr-back a-c">
+                            <button id="gallery-back" class="btn btn-info">
+                            	<span class="glyphicon glyphicon-backward"></span> Back to list
+                            </button>
+                         
+                        </div>
+                        <div id="gallery-sel-list"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-template" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button id="modal-close" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 id="modal-title" class="modal-title">{title}</h4>
+                    </div>
+                    <div id="modal-content" class="modal-body a-c">{photo}</div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
